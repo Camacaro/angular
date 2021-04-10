@@ -13,3 +13,6 @@ Introduccion a typescript
 * 09-genericos
 * 10-decoradores
 * 11-optional-chaining
+
+### 01-bases
+* 
