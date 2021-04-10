@@ -1,6 +1,6 @@
 # Angular
 
-### 01-ts-intro
+### 00-ts-intro
 Introduccion a typescript 
 * 01-tipos-basicos
 * 02-arr-obj-interface
