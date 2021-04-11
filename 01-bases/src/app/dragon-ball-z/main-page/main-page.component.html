@@ -8,11 +8,17 @@
   </div>
 
   <div class="col">
-    <h3>Agregar</h3>
+    <app-agregar 
+      [personaje]="personaje"
+      [personajes]="personajes"
+    >
+    </app-agregar>
+
+    <!-- <h3>Agregar</h3>
     <hr/>
 
     <form (ngSubmit)="agregar()">
-      <!-- Forma separada -->
+      <!-- Forma separada --
       <input
         placeholder="Nombre Prueba"
         type="text"
@@ -37,7 +43,7 @@
       <button type="submit">
         Agregar
       </button>
-    </form>
+    </form> -->
   </div>
 
 </div>

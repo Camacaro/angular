@@ -15,10 +15,10 @@ export class MainPageComponent {
   //   [value]="personaje.nombre"
   // />
 
-  personaje: Personaje = {
-    nombre: '',
-    poder: 0
-  };
+  // personaje: Personaje = {
+  //   nombre: '',
+  //   poder: 0
+  // };
 
   personajes: Personaje[] = [
     {
@@ -31,6 +31,11 @@ export class MainPageComponent {
     }
   ];
 
+  personaje: Personaje = {
+    nombre: 'Maestro Rochi',
+    poder: 1000
+  };
+
   // Manual - <form (submit)="agregar($event)">
   // agregar(event: any ): void {
   //   event.preventDefault();
@@ -39,21 +44,21 @@ export class MainPageComponent {
   // }
 
   // FormsModule - <form (ngSubmit)="agregar()">
-  agregar(): void {
-    if ( this.personaje.nombre.trim().length === 0 ) {
-      return;
-    }
+  // agregar(): void {
+  //   if ( this.personaje.nombre.trim().length === 0 ) {
+  //     return;
+  //   }
 
-    this.personajes.push( this.personaje );
+  //   this.personajes.push( this.personaje );
 
-    this.personaje = {
-      nombre: '',
-      poder: 0
-    }
-  }
+  //   this.personaje = {
+  //     nombre: '',
+  //     poder: 0
+  //   }
+  // }
 
-  cambiarNombre(event: any): void {
-    console.log(event.target.value)
-  }
+  // cambiarNombre(event: any): void {
+  //   console.log(event.target.value)
+  // }
 
 }
