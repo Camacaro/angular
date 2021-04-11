@@ -8,18 +8,6 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class MainPageComponent {
 
-  // One way data
-  // <input
-  //   placeholder="Nombre"
-  //   type="text"
-  //   [value]="personaje.nombre"
-  // />
-
-  // personaje: Personaje = {
-  //   nombre: '',
-  //   poder: 0
-  // };
-
   personajes: Personaje[] = [
     {
       nombre: 'Goku',
@@ -35,6 +23,23 @@ export class MainPageComponent {
     nombre: 'Maestro Rochi',
     poder: 1000
   };
+
+  agregarNuevoPersonaje( argumento: Personaje ): void{
+    console.log('MainPageComponent');
+    this.personajes.push(argumento);
+  }
+
+  // One way data
+  // <input
+  //   placeholder="Nombre"
+  //   type="text"
+  //   [value]="personaje.nombre"
+  // />
+
+  // personaje: Personaje = {
+  //   nombre: '',
+  //   poder: 0
+  // };
 
   // Manual - <form (submit)="agregar($event)">
   // agregar(event: any ): void {

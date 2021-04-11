@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -8,8 +8,11 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class AgregarComponent {
 
-  // @Input() agregar: void = () => {};
-  @Input() personajes: Personaje[] = [];
+  // @Output('alias-component-padre') nombre-en-esta-clase: any[] = [];
+  // tslint da un error de no tener un prefijo de on
+  // padre <- hijo
+  // hijo -> padre
+  @Output() nuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
 
   @Input() personaje: Personaje = {
     nombre: '',
@@ -21,10 +24,7 @@ export class AgregarComponent {
       return;
     }
 
-    console.log('Agregar', this.personaje);
-    console.log('Agregar personajes', this.personajes);
-
-    this.personajes.push( this.personaje );
+    this.nuevoPersonaje.emit( this.personaje );
 
     this.personaje = {
       nombre: '',
