@@ -10,7 +10,7 @@ import { DbzService } from './services/dbz.service';
 @NgModule({
   declarations: [
     MainPageComponent,
-    PersonajesComponent,
+    // PersonajesComponent,
     AgregarComponent
   ],
   exports: [
