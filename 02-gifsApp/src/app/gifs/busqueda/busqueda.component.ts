@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { GifsService } from '../services/gifs.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -12,13 +13,15 @@ export class BusquedaComponent {
   // Buscar por referencia local - Busca en el HTML que quiera
   @ViewChild('txtBuscar') txtBuscar!: ElementRef<HTMLInputElement>;
 
+  constructor(private gifsService: GifsService){}
+
   // Foma  de hacerlo sin usar formModule or ngModule
   buscar(): void{
     console.log();
 
     const value = this.txtBuscar.nativeElement.value;
 
-    console.log(value);
+    this.gifsService.buscarGifs(value)
 
     this.txtBuscar.nativeElement.value = '';
   }
