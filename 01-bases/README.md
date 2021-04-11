@@ -6,11 +6,11 @@
 
 ## Heroes (Module)
 
-## heroe.component
+### heroe.component
 *one way data*  
 * Componente Manual
 
-## listado.component
+### listado.component
 * Componente automatico
 *Directivas Estructurales*
 * ngFor

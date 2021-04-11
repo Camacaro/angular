@@ -15,4 +15,5 @@ Introduccion a typescript
 * 11-optional-chaining
 
 ### 01-bases
-* 
+* Contador (Module)
+* Heroes (Module) (Directivas Estructurales)
