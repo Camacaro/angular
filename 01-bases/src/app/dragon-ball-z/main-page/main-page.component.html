@@ -6,9 +6,9 @@
     <h3>Personakes</h3>
     <hr/>
     <ul>
-      <li> Krillin - 700 </li>
-      <li> Goku - 15,000 </li>
-      <li> Vegeta - 8,500 </li>
+      <li *ngFor="let personaje of personajes">
+        {{ personaje.nombre }} - {{ personaje.poder | number }}
+      </li>
     </ul>
   </div>
 
@@ -26,7 +26,7 @@
       />
 
       <input
-        placeholder="Nombre Prueba"
+        placeholder="Nombre"
         type="text"
         name="nombre"
         [(ngModel)]="personaje.nombre"

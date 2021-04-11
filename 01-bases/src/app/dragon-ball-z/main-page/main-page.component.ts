@@ -20,9 +20,20 @@ export class MainPageComponent {
   // />
 
   personaje: Personaje = {
-    nombre: 'Trucks',
-    poder: 14000
+    nombre: '',
+    poder: 0
   };
+
+  personajes: Personaje[] = [
+    {
+      nombre: 'Goku',
+      poder: 15000
+    },
+    {
+      nombre: 'Vegueta',
+      poder: 7500
+    }
+  ];
 
   // Manual - <form (submit)="agregar($event)">
   // agregar(event: any ): void {
@@ -33,7 +44,16 @@ export class MainPageComponent {
 
   // FormsModule - <form (ngSubmit)="agregar()">
   agregar(): void {
-    console.log( this.personaje )
+    if ( this.personaje.nombre.trim().length === 0 ) {
+      return;
+    }
+
+    this.personajes.push( this.personaje );
+
+    this.personaje = {
+      nombre: '',
+      poder: 0
+    }
   }
 
   cambiarNombre(event: any): void {
