@@ -7,5 +7,6 @@
 * LocalStorage
 
 ## shared (Module)
-* pipe
+### sidebard.component
+* 
 
