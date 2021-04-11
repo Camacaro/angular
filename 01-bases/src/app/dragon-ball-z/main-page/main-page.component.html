@@ -1,0 +1,48 @@
+<p>Dragon Ball Z</p>
+<hr/>
+
+<div class="row">
+  <div class="col">
+    <h3>Personakes</h3>
+    <hr/>
+    <ul>
+      <li> Krillin - 700 </li>
+      <li> Goku - 15,000 </li>
+      <li> Vegeta - 8,500 </li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <h3>Agregar</h3>
+    <hr/>
+
+    <form (ngSubmit)="agregar()">
+      <!-- Forma separada -->
+      <input
+        placeholder="Nombre Prueba"
+        type="text"
+        [value]="personaje.nombre"
+        (input)="cambiarNombre($event)"
+      />
+
+      <input
+        placeholder="Nombre Prueba"
+        type="text"
+        name="nombre"
+        [(ngModel)]="personaje.nombre"
+      />
+
+      <input
+        placeholder="Poder"
+        type="text"
+        name="poder"
+        [(ngModel)]="personaje.poder"
+      />
+
+      <button type="submit">
+        Agregar
+      </button>
+    </form>
+  </div>
+
+</div>
