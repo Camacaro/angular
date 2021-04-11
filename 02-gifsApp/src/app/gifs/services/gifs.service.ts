@@ -7,16 +7,20 @@ export class GifsService {
 
   private _historial: string[] = [];
 
-  get historial() {
+  get historial(): string[]  {
     return [...this._historial];
   }
 
   constructor() { }
 
-  buscarGifs( query: string ) {
-    // Agregar al inicio
-    this._historial.unshift( query );
+  buscarGifs( query: string = '' ): void {
 
-    console.log(this._historial)
+    query = query.trim().toLocaleLowerCase();
+
+    if ( !this._historial.includes(query) ){
+      // Agregar al inicio
+      this._historial.unshift( query );
+      this._historial = this._historial.slice(0, 10);
+    }
   }
 }

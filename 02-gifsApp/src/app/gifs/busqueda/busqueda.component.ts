@@ -17,11 +17,14 @@ export class BusquedaComponent {
 
   // Foma  de hacerlo sin usar formModule or ngModule
   buscar(): void{
-    console.log();
 
     const value = this.txtBuscar.nativeElement.value;
 
-    this.gifsService.buscarGifs(value)
+    if ( value.trim().length === 0 ) {
+      return;
+    }
+
+    this.gifsService.buscarGifs(value);
 
     this.txtBuscar.nativeElement.value = '';
   }
