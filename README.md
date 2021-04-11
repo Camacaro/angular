@@ -20,3 +20,5 @@ Introduccion a typescript
 * Dragon Ball Z (DBZ) (Module) (Inputs, Outpus, Services, ngModel, FormsModule)
 
 ### 02-gifsApp
+* gifs (Module) (ViewChild, Http, LocalStorage)
+* shared (Module) (pipe)

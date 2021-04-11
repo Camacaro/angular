@@ -1,4 +1,11 @@
 # GifsApp
 
-## Contador (Module)
-* contador.component 
+## gifs (Module)
+### busqueda.component
+* ViewChild
+* Http
+* LocalStorage
+
+## shared (Module)
+* pipe
+
