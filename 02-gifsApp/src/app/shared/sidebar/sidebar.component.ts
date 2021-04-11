@@ -17,4 +17,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscar(termino: string): void {
+    this.gifsService.buscarGifs(termino);
+  }
+
 }
