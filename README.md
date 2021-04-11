@@ -17,3 +17,4 @@ Introduccion a typescript
 ### 01-bases
 * Contador (Module)
 * Heroes (Module) (Directivas Estructurales)
+* Dragon Ball Z (DBZ) (Module) (Inputs, Outpus, Services, ngModel, FormsModule)
