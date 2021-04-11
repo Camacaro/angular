@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
-
 @Injectable()
 export class DbzService {
 
@@ -17,12 +16,17 @@ export class DbzService {
     }
   ];
 
-  constructor() {
-    console.log('Servicios inicializado');
-  }
-
   get personajes(): Personaje[] {
     // Rompo la referencia con el this._personajes
     return [...this._personajes];
   }
+
+  constructor() {
+    console.log('Servicios inicializado');
+  }
+
+  agregarPersonajes( personaje: Personaje ): void {
+    this._personajes.push( personaje );
+  }
+
 }
