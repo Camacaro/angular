@@ -10,11 +10,11 @@ export class AppComponent {
   valor = 1000;
   obj = {
     nombre: 'Jesus'
-  }
+  };
 
   mostrarNombre(): void {
-    console.log(this.nombre)
-    console.log(this.valor)
-    console.log(this.obj)
+    console.log(this.nombre);
+    console.log(this.valor);
+    console.log(this.obj);
   }
 }
