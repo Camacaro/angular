@@ -1,32 +1,6 @@
 <div class="row container mt-4">
   <div class="col-3">
-    <h2>Busqueda</h2>
-    <hr/>
-    <ul class="list-group">
-      <!-- ruta exacta / routerLinkActiveOptions -->
-      <li routerLink=""
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="list-group-item"
-      > 
-        Buscar País 
-      </li>
-
-      <li routerLink="region"
-        routerLinkActive="active"
-        class="list-group-item"
-      > 
-        Por región 
-      </li>
-
-      <!-- routerLink: viene desde AppRoutingModule (RouteModule)  -->
-      <li routerLink="capital"
-        routerLinkActive="active"
-        class="list-group-item"
-      > 
-        Buscar capital 
-      </li>
-    </ul>
+    <app-sidebar></app-sidebar>
   </div>
 
   <div class="col">
