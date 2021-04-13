@@ -8,13 +8,3 @@
 ### app-routing.module
 * RouterModule
 
-## gifs (Module)
-### busqueda.component
-* ViewChild
-* Http
-* LocalStorage
-
-## shared (Module)
-### sidebard.component
-* 
-
