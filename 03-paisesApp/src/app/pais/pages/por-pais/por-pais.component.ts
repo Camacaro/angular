@@ -38,4 +38,9 @@ export class PorPaisComponent {
     //   });
   }
 
+  sugerencias( termino: string ): void {
+    this.hayError = false;
+    console.log('sugerencias', termino);
+  }
+
 }
