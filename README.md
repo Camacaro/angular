@@ -22,3 +22,9 @@ Introduccion a typescript
 ### 02-gifsApp
 * gifs (Module) (ViewChild, Http, LocalStorage)
 * shared (Module) (pipe)
+
+### 03-paisesApp
+* SPA - Single Page Aplication
+* Router
+* RxJs - switchMap
+* pipe: json
