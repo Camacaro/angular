@@ -1,25 +1,27 @@
-<h2>Por País</h2>
-<hr/>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Por País</h2>
+  <hr/>
 
-<div class="row">
-  <div class="col">
-    <app-pais-input 
-      (onEnter)="buscar( $event )"
-      (onDebounce)="sugerencias($event)"
-      placeholder="Buscar país..."
-    >      
-    </app-pais-input>
+  <div class="row">
+    <div class="col">
+      <app-pais-input 
+        (onEnter)="buscar( $event )"
+        (onDebounce)="sugerencias($event)"
+        placeholder="Buscar país..."
+      >      
+      </app-pais-input>
+    </div>
   </div>
-</div>
 
-<hr/>
+  <hr/>
 
-<div *ngIf="hayError" class="alert alert-danger">
-  No se encontró el termino {{this.termino}}
-</div>
+  <div *ngIf="hayError" class="alert alert-danger">
+    No se encontró el termino {{this.termino}}
+  </div>
 
-<div *ngIf="paises.length > 0" class="row">
-  <div class="col">
-    <app-pais-table [paises]="paises" ></app-pais-table>
+  <div *ngIf="paises.length > 0" class="row">
+    <div class="col">
+      <app-pais-table [paises]="paises" ></app-pais-table>
+    </div>
   </div>
 </div>

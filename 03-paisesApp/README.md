@@ -8,3 +8,6 @@
 ### app-routing.module
 * RouterModule
 
+## pais (Module)
+### components/pais-input.component
+* sugerencia - RxJs

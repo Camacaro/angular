@@ -28,3 +28,4 @@ Introduccion a typescript
 * Router
 * RxJs - switchMap
 * pipe: json
+* HttpParams
