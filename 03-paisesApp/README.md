@@ -10,4 +10,7 @@
 
 ## pais (Module)
 ### components/pais-input.component
-* sugerencia - RxJs
+* sugerencia - RxJs - autocomplete
+
+### pages/por-region.component
+* ngClass, class, [class]

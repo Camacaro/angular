@@ -29,3 +29,5 @@ Introduccion a typescript
 * RxJs - switchMap
 * pipe: json
 * HttpParams
+* ngClass, class, [class]
+* sugerencia - RxJs - autocomplete
