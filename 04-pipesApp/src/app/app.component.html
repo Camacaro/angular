@@ -11,3 +11,20 @@
 >
   
 </button>
+
+<button pButton 
+  (click)="mostrarNombre()" 
+  label="help"
+  icon="pi pi-check"
+  iconPos="right"
+  class="p-button-help"
+>
+  
+</button>
+
+
+<p-card [header]="nombre | titlecase"
+  subheader="Esto es un Sub titulo"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio, consequatur suscipit aliquid eius odio quo molestiae voluptatibus laborum ab aspernatur illo atque omnis cum enim, veritatis repellat nulla hic?
+</p-card>
