@@ -17,7 +17,7 @@ export class OrdenarComponent {
       color: Color.azul
     },
     {
-      nombre: 'Superman',
+      nombre: 'Batman',
       vuela: false,
       color: Color.negro
     },
