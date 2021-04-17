@@ -46,4 +46,25 @@
       </button>
     </p-fieldset>
   </div>
+
+  <div class="p-col p-md-6">
+    <!-- https://angular.io/api/common/SlicePipe -->
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre> {{ clientes }} </pre>
+
+      <b> slice:0:2 </b>
+      <pre> {{ clientes | slice:0:2 }} </pre>
+
+      <b> slice:1:2 </b> <br/>
+      <span>slice:inclusive:excluyente</span>
+      <pre> {{ clientes | slice:1:2 }} </pre>
+
+      <b> slice:3:3 </b>
+      <pre> {{ clientes | slice:3:3 }} </pre>
+
+      <b> slice:0:3 - Camacaro </b>
+      <pre> {{ 'Camacaro' | slice:0:3 }} </pre>
+    </p-fieldset>
+  </div>
 </div>
