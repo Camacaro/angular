@@ -67,4 +67,37 @@
       <pre> {{ 'Camacaro' | slice:0:3 }} </pre>
     </p-fieldset>
   </div>
+
+  <div class="p-col p-md-6">
+    <!-- https://angular.io/api/common/KeyValuePipe -->
+    <p-fieldset legend="keyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of persona | keyvalue"> 
+          <b>{{item.key | titlecase}}:</b> {{item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <!-- https://angular.io/api/common/KeyValuePipe -->
+    <p-fieldset legend="JSON Pipe" [toggleable]="true">
+      <pre> {{ heroes | json }}  </pre>
+    </p-fieldset>
+  </div>
+
+  <div class="p-col p-md-6">
+    <!-- https://angular.io/api/common/AsyncPipe -->
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+      <!-- Aqui hay dos subscripciones emite dos veces, se suscriben cada uno -->
+      <pre *ngIf="!(miObservable | async)"> Resolviendo observable </pre>
+      <pre>{{ miObservable | async}}</pre>
+      
+      <pre *ngIf="!(valorPromesa | async)"> Resolviendo promesa </pre>
+      <pre>{{ valorPromesa | async}}</pre>
+
+
+    </p-fieldset>
+  </div>
 </div>
