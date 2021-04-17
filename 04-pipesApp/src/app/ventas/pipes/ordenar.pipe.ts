@@ -6,14 +6,28 @@ import { Heroe } from '../interfaces/ventas.interaces';
 })
 export class OrdenarPipe implements PipeTransform {
 
-  transform(heroes: Heroe[]): Heroe[] {
+  transform(heroes: Heroe[], orderPor: string = 'sin valor'): Heroe[] {
 
-    // Ordenar por nombre, alfabeticamente
-    // 1: si necesito si cambiarlo de lugar
-    // -1: si necesito el cambio inverso
-    heroes = heroes.sort( (a, b) => (a.nombre > b.nombre) ? 1 : -1 );
+    switch (orderPor) {
+      case 'nombre':
+        // Ordenar por nombre, alfabeticamente
+        // 1: si necesito si cambiarlo de lugar
+        // -1: si necesito el cambio inverso
+        return heroes.sort( (a, b) => (a.nombre > b.nombre) ? 1 : -1 );
 
-    return heroes;
+      case 'vuela':
+        // Con booleanos primero se ordena por false
+        // return heroes.sort( (a, b) => (a.vuela > b.vuela) ? 1 : -1 );
+
+        // De manera inversa para que true este de primero
+        return heroes.sort( (a, b) => (a.vuela > b.vuela) ? -1 : 1 );
+
+      case 'color':
+        // de menor a mayor
+        return heroes.sort( (a, b) => (a.color > b.color) ? 1 : -1 );
+
+      default:
+        return heroes;
+    }
   }
-
 }
