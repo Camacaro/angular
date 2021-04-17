@@ -49,3 +49,9 @@ Introduccion a typescript
 * [PrimeNG](https://markdownlivepreview.com/)
 * Módulo especializado para módulos de PrimeNG
 
+### 05-paisesApp
+* Rutas Hijas
+* Rutas Principales
+* LazyLoad
+* Multiples estilos en la misma SPA
+
