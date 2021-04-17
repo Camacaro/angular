@@ -1,1 +1,76 @@
-<p>basicos works!</p>
+
+
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <p>
+    Pipes incluidos en Angular - Usualmente en el Common Module.
+  </p>
+</div>
+
+<div class="p-grid">
+
+  <div class="p-col-4">
+    <p-card header="uppercase"
+      [subheader]="nombreLower | uppercase"
+    >
+      {{ nombreLower}} - Pipe: {{ nombreLower | uppercase}}
+    </p-card>
+  </div>
+
+  <div class="p-col-4">
+    <p-card header="lowercase"
+      [subheader]="nombreUpper | lowercase"
+    >
+      {{nombreUpper}} - Pipe: {{ nombreUpper | lowercase}}
+    </p-card>
+  </div>
+
+  <div class="p-col-4">
+     <p-card header="titlecase"
+      [subheader]="nombreComplete | titlecase"
+    >
+      {{nombreComplete}} - Pipe: {{ nombreComplete | titlecase}}
+    </p-card>
+  </div>
+</div>
+
+<div class="text-layout">
+  <h1>Date | Fecha | Pipe </h1>
+  <!-- https://angular.io/api/common/DatePipe -->
+  <p>
+    Pipe para mostrar las fechas
+  </p>
+</div>
+
+<div class="p-grid">
+
+  <div class="p-col-6">
+    <p-card >
+      <ul>
+        <li> fecha </li>
+        <li> fecha | date </li>
+        <li> fecha | date:'short' </li>
+        <li> fecha | date:'long' </li>
+        <li> fecha | date:'EEEE-dd-yy' </li>
+        <li> fecha | date:'MMMM' </li>
+        <li> fecha | date:'MMMM dd, yyyy' </li>
+
+      </ul>
+    </p-card>
+  </div>
+  <!-- // Cambiar el locale de la app - Time en el app.module -->
+  <div class="p-col-6">
+    <p-card >
+      <ul>
+        <li> {{ fecha }} </li>
+        <li> {{ fecha | date }} </li>
+        <li> {{ fecha | date:'short' }} </li>
+        <li> {{ fecha | date:'long' }} </li>
+        <li> {{ fecha | date:'EEEE-dd-yy' }} </li>
+        <li> {{fecha | date:'MMMM'}} </li>
+        <li> {{ fecha | date:'MMMM dd, yyyy' }} </li>
+      </ul>
+    </p-card>
+  </div>
+
+</div>
