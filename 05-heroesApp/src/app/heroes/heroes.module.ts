@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 // Modules
 import { HeroeRoutingModule } from './heroe-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -26,9 +28,10 @@ import { ImagenPipe } from './pipes/imagen.pipe';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     HeroeRoutingModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class HeroesModule { }
