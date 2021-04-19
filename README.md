@@ -68,4 +68,5 @@ Introduccion a typescript
 * Peticiones HTTP
 * JSON-Server
 * Angular Flex y Flexbox
+* CRUD
 * Y más...

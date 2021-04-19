@@ -12,3 +12,12 @@
 * JSON-Server
 * Angular Flex y [Flexbox](https://github.com/angular/flex-layout)
 * Y más...
+* CRUD
+* Create
+* Read
+* Update
+* Delete
+* Pipes puros e impuros
+* Snacks
+* Dialogs
+* Inyección de servicios manualmente
