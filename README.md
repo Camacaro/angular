@@ -69,4 +69,5 @@ Introduccion a typescript
 * JSON-Server
 * Angular Flex y Flexbox
 * CRUD
+* Pipes Puros e Impuros
 * Y más...

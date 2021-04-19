@@ -166,6 +166,42 @@
       "alter_ego": "Norrin Radd",
       "first_appearance": "The Fantastic Four #48",
       "characters": "Norrin Radd"
+    },
+    {
+      "superhero": "Robin 2",
+      "alter_ego": "",
+      "characters": "",
+      "first_appearance": "",
+      "publisher": "DC Comics",
+      "alt_img": "https://i.pinimg.com/originals/15/ae/b9/15aeb91c0c1a640a577ca886ffba87d9.gif",
+      "id": "RwISWut"
+    },
+    {
+      "superhero": "Robin 3",
+      "alter_ego": "",
+      "characters": "",
+      "first_appearance": "",
+      "publisher": "DC Comics",
+      "alt_img": "",
+      "id": "W0L0hXi"
+    },
+    {
+      "superhero": "Robin 5",
+      "alter_ego": "",
+      "characters": "",
+      "first_appearance": "",
+      "publisher": "DC Comics",
+      "alt_img": "https://i.pinimg.com/474x/88/ac/f2/88acf2b602b8d4a63ae41baa38ded8db.jpg",
+      "id": "2VMAYHZ"
+    },
+    {
+      "superhero": "Robin",
+      "alter_ego": "",
+      "characters": "",
+      "first_appearance": "Lores",
+      "publisher": "DC Comics",
+      "alt_img": "https://i.pinimg.com/474x/88/ac/f2/88acf2b602b8d4a63ae41baa38ded8db.jpg",
+      "id": "B9eXAGR"
     }
   ]
 }
