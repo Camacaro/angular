@@ -26,4 +26,8 @@ export class AuthService {
         tap( auth => this._auth = auth )
       );
   }
+
+  logout(): void {
+    this._auth = undefined;
+  }
 }
