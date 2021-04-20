@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-agregar',
@@ -85,13 +86,37 @@ export class AgregarComponent implements OnInit {
 
   borrarHeroe(): void {
 
-    this.dialog.open( ConfirmarComponent, {
-      width: '250px'
+    const dialog = this.dialog.open( ConfirmarComponent, {
+      width: '250px',
+      data: { ...this.heroe }
     });
-    // this.heroesService.borrarHeroe( this.heroe.id! )
-    // .subscribe( resp => {
-    //   this.router.navigate(['/heroes']);
-    // })
+
+    // dialog.afterClosed()
+    //   .subscribe( (result) => {
+    //     if( result ) {
+    //       this.heroesService.borrarHeroe( this.heroe.id! )
+    //       .subscribe( resp => {
+    //         this.router.navigate(['/heroes']);
+    //       })
+    //     }
+    //   });
+
+    dialog.afterClosed()
+      .pipe(
+        switchMap( (result) => {
+          if (result) {
+            return this.heroesService.borrarHeroe( this.heroe.id! )
+          } else {
+            return of(false);
+          }
+        })
+      )
+      .subscribe( (result) => {
+        if( result ) {
+          this.router.navigate(['/heroes']);
+        }
+      });
+
   }
 
   mostartSnakbar( mensaje: string ): void {
