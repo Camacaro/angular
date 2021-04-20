@@ -6,7 +6,7 @@ import { Heroe } from '../interfaces/heroe.interface';
 // se rdireccione muchas veces el pipe
 @Pipe({
   name: 'imagen',
-  pure: false
+  pure: true // impure -> false
 })
 export class ImagenPipe implements PipeTransform {
 
