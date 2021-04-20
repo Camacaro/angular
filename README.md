@@ -70,4 +70,5 @@ Introduccion a typescript
 * Angular Flex y Flexbox
 * CRUD
 * Pipes Puros e Impuros
+* Rutas publicas y Privadas
 * Y más...
