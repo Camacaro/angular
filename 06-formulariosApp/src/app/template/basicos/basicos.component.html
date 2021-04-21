@@ -20,7 +20,7 @@
             class="form-control"
             placeholder="Nombre del Producto"
             name="producto"
-            ngModel
+            [ngModel]="initForm.producto"
             required
             minlength="3"
           >
@@ -69,7 +69,7 @@
             customMin
             [minimo]="0"
             name="existencias"
-            ngModel
+            [ngModel]="initForm.existencias"
             required
           >
         </div>
