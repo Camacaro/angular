@@ -3,38 +3,74 @@
 
 <div class="row">
   <div class="col">
-    <form>
+
+    <form 
+      (ngSubmit)="guardar()" 
+      #miFormulario="ngForm"
+      autocomplete="off"
+    >
 
       <!-- Campo de produtcto -->
       <div class="mb-3 row">
+        
         <label class="col-sm-3 col-form-label"> Productos </label>
+        
         <div class="col-sm-9">
           <input type="text"
             class="form-control"
             placeholder="Nombre del Producto"
+            name="producto"
+            ngModel
+            required
+            minlength="3"
           >
-          <span class="form-text text-danger">Debe de ser de 3 letras</span>
+          
+          <span class="form-text text-danger"
+            *ngIf="nombreValido()"
+          >
+            Debe de ser de 3 letras
+          </span>
+
         </div>
       </div>
 
       <!-- Campo de Precio -->
       <div class="mb-3 row">
+        
         <label class="col-sm-3 col-form-label"> Precio </label>
+        
         <div class="col-sm-9">
+          
           <input type="number"
             class="form-control"
             placeholder="Precio del Producto"
+            name="precio"
+            ngModel
+            required
+            min="0"
           >
+
+          <span class="form-text text-danger"
+            *ngIf="precioValido()"
+          >
+            El precio debe ser 0 o mayor
+          </span>
+
         </div>
       </div>
 
-       <!-- Campo de existencia -->
+       <!-- Campo de existencia: customMin y [minimo] estan en mi directives/custom-min.directive -->
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label"> Existencias </label>
         <div class="col-sm-9">
           <input type="number"
             class="form-control"
             placeholder="Existencias del Producto"
+            customMin
+            [minimo]="0"
+            name="existencias"
+            ngModel
+            required
           >
         </div>
       </div>
@@ -44,6 +80,7 @@
           <button 
             type="submit"
             class="btn btn-primary float-end"
+            [disabled]="miFormulario.invalid"
           >
             Guardar
           </button>
@@ -51,5 +88,27 @@
       </div>
 
     </form>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col">
+   
+    <strong>Valid</strong>
+    <pre> {{ miFormulario.valid }} </pre>
+
+    <strong>Pristine (No se ha tocado el formulario desde que se presentó sus valores)</strong>
+    <pre> {{ miFormulario.pristine }} </pre>
+
+    <strong>Touched (si el usuario a tocado el formulario)</strong>
+    <pre> {{ miFormulario.touched }} </pre>
+
+    <strong>Value</strong>
+    <pre> {{ miFormulario.value | json }} </pre>
+
+    <strong>CustomDirective</strong>
+    <pre> {{ miFormulario.controls.existencias?.errors | json }} </pre>
   </div>
 </div>
