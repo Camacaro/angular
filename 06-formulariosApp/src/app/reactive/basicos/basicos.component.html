@@ -6,6 +6,7 @@
 
     <form 
       autocomplete="off"
+      [formGroup]="miFormulario"
     >
 
       <!-- Campo de produtcto -->
@@ -17,6 +18,7 @@
           <input type="text"
             class="form-control"
             placeholder="Nombre del Producto"
+            formControlName="nombre"
           >
           
           <span class="form-text text-danger"
@@ -37,6 +39,7 @@
           <input type="number"
             class="form-control"
             placeholder="Precio del Producto"
+            formControlName="precio"
           >
 
           <span class="form-text text-danger"
@@ -55,6 +58,7 @@
           <input type="number"
             class="form-control"
             placeholder="Existencias del Producto"
+            formControlName="existencias"
           >
         </div>
       </div>
@@ -64,6 +68,7 @@
           <button 
             type="submit"
             class="btn btn-primary float-end"
+            [disabled]="miFormulario.invalid"
           >
             Guardar
           </button>
@@ -76,7 +81,7 @@
 
 
 
-<!-- <div class="row">
+<div class="row">
   <div class="col">
     <strong>Valid</strong>
     <pre> {{ miFormulario.valid }} </pre>
@@ -90,7 +95,5 @@
     <strong>Value</strong>
     <pre> {{ miFormulario.value | json }} </pre>
 
-    <strong>CustomDirective</strong>
-    <pre> {{ miFormulario.controls.existencias?.errors | json }} </pre>
   </div>
-</div> -->
+</div>
