@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
   styles: [
   ]
 })
-export class BasicosComponent {
+export class BasicosComponent implements OnInit {
 
   // miFormulario: FormGroup = new FormGroup({
   //   nombre      : new FormControl('RTX 4080ti'),
@@ -17,13 +17,42 @@ export class BasicosComponent {
 
   // [ valor, validador_sync, validador_async ]
   miFormulario: FormGroup = this.formBuilder.group({
-    nombre: [ 'RTX 4080ti', [ Validators.required, Validators.minLength(3) ]  ],
-    precio: [ 0, [ Validators.required, Validators.min(0) ] ],
-    existencias: [ 0, [ Validators.required, Validators.min(0) ] ]
+    nombre: [ , [ Validators.required, Validators.minLength(3) ]  ],
+    precio: [ , [ Validators.required, Validators.min(0) ] ],
+    existencias: [ , [ Validators.required, Validators.min(0) ] ]
   });
 
   constructor(private formBuilder: FormBuilder) { }
 
+  ngOnInit(): void {
+    // Esta funcion espera que le mandes todos los valores iniciales del formulario
+    // this.miFormulario.setValue({
+    //   nombre: 'RTX 4080ti',
+    //   precio: 1500,
+    // });
 
+    // Con esta podemos setear algunos valores
+    this.miFormulario.reset({
+      nombre: 'RTX 4080ti',
+      precio: 1500,
+    });
+  }
+
+  campoEsValido( campo: string ): boolean | null {
+    return this.miFormulario.controls[campo].errors
+      && this.miFormulario.controls[campo].touched;
+  }
+
+  guardar(): void {
+
+    if ( this.miFormulario.invalid ) {
+      // Tocar todas los campos del formulario para que salgan los errores
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
+
+    console.log(this.miFormulario.value);
+    this.miFormulario.reset();
+  }
 
 }
