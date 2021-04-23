@@ -1,19 +1,25 @@
 <h2>Reactivos : <small>Dinámicos</small> </h2>
 <hr>
 
-<form autocomplete="off">
+<form
+  (ngSubmit)="guardar()"
+  autocomplete="off"
+  [formGroup]="miFormulario"
+>
 
   <!-- Nombre -->
   <div class="row mb-3">
-    <label class="col-sm-3 col-form-label"> Nombre</label>
+    <label class="col-sm-3 col-form-label"> Nombre </label>
     <div class="col-sm-9">
 
       <input
         class="form-control"
         placeholder="Nombre de la Persona"
+        formControlName="nombre"
       >
 
       <span class="form-text text-danger"
+        *ngIf="campoEsValido('nombre')"
       >
         Este campo es obligatorio
       </span>
@@ -32,13 +38,14 @@
         <input
           class="form-control"
           placeholder="Agregar favorito"
-          (keyup.enter)="1"
+          [formControl]="nuevoFavorito"
+          (keyup.enter)="agregarFavorito()"
         >
 
         <button 
           class="btn btn-outline-primary" 
           type="button"
-          (click)="1"
+          (click)="agregarFavorito()"
         >
           Agregar
         </button>
@@ -51,23 +58,24 @@
   <!-- Lista de Juegos Favoritos -->
   <div class="row mb-3">
     <label class="col-sm-3 col-form-label"> Favoritos </label>
-    <div class="col-sm-9">
+    <div class="col-sm-9" formArrayName="favoritos">
 
-      <!-- <div class="input-group mb-1"
-        *ngFor="let juego of persona.favoritos; let i = index"
+      <div class="input-group mb-1"
+        *ngFor="let juego of favoritosArr.controls; let i = index"
       >
         <input 
           class="form-control"
+          [formControlName]="i"
         >
 
         <button 
           class="btn btn-outline-danger"
           type="button"
-          (click)="1"
+          (click)="borrar(i)"
         >
           Eliminar
         </button>
-      </div> -->
+      </div>
 
     </div>
   </div>
@@ -75,8 +83,7 @@
   <div class="row mb-3">
     <div class="col-sm-12">
       <button 
-        type="button" 
-        (click)="1"
+        type="submit" 
         class="btn btn-primary float-end"
       >
         Guardar
@@ -86,6 +93,18 @@
 </form>
 
 
-<!-- 
-<span>Persona</span>
-<pre>{{ persona | json }}</pre> -->
+<span>Valid</span>
+<pre> {{ miFormulario.valid }} </pre>
+<br>
+
+<span>Value</span>
+<pre> {{ miFormulario.value | json }} </pre>
+<br>
+
+<span>Agregar Juego</span>
+<pre> {{ nuevoFavorito.valid | json }} </pre>
+<br>
+
+<span>Agregar Juego value</span>
+<pre> {{ nuevoFavorito.value }} </pre>
+<br>
