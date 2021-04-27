@@ -84,3 +84,6 @@ Introduccion a typescript
 * Encapsular módulos y scope de los mismos
 
 Este es un tema fundamental, pero no es el único, hay varias formas de manejar el estado de un formulario, principalmente tenemos Template driven y Model Driven o formularios reactivos, en esta sección trabajaremos con formularios por template.
+
+### 07-selectores
+Esta sección es una extensión de los formularios reactivos, la cual cubre un tema, el manejo de selectores anidados usando RXJS.
