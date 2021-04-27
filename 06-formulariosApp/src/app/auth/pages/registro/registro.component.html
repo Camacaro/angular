@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col">
     
-    <form autocomplete="off">
+    <form autocomplete="off" [formGroup]="miFormulario">
 
       <!-- Nombre -->
       <div class="row mb-3">
@@ -13,6 +13,7 @@
           <input type="text"
             class="form-control"
             placeholder="Nombre del usuario"
+            formControlName="nombre"
           >
 
           <span class="form-text text-danger">
@@ -83,3 +84,6 @@
 
   </div>
 </div>
+
+
+<h2>Form Valid {{ miFormulario.valid }} </h2>
