@@ -4,7 +4,10 @@
 <div class="row">
   <div class="col">
     
-    <form autocomplete="off" [formGroup]="miFormulario">
+    <form autocomplete="off" 
+      [formGroup]="miFormulario"
+      (ngSubmit)="submitFormulario()"
+    >
 
       <!-- Nombre -->
       <div class="row mb-3">
@@ -16,7 +19,9 @@
             formControlName="nombre"
           >
 
-          <span class="form-text text-danger">
+          <span class="form-text text-danger"
+            *ngIf="compoNoValido('nombre')"
+          >
             Debe de ser en formato de nombre y apellido
           </span>
         </div>
@@ -24,12 +29,19 @@
 
       <!-- Email -->
       <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Nombre</label>
+        <label class="col-sm-3 col-form-label">Email</label>
         <div class="col-sm-9">
           <input type="email"
             class="form-control"
             placeholder="Email del usuario"
+            formControlName="email"
           >
+
+          <span class="form-text text-danger"
+            *ngIf="compoNoValido('email')"
+          >
+            El correo es obligatorio
+          </span>
 
         </div>
       </div>
@@ -41,7 +53,14 @@
           <input type="text"
             class="form-control"
             placeholder="Nombre código del usuario"
+            formControlName="username"
           >
+
+          <span class="form-text text-danger"
+            *ngIf="compoNoValido('username')"
+          >
+            El username no puede ser strider
+          </span>
 
         </div>
       </div>
@@ -74,6 +93,7 @@
         <div class="col">
           <button
             class="btn btn-primary float-end"
+            type="submit"
           >
             Crear
           </button>
@@ -86,4 +106,14 @@
 </div>
 
 
-<h2>Form Valid {{ miFormulario.valid }} </h2>
+<h5>Form Valid {{ miFormulario.valid }} </h5>
+<br>
+
+<h5> Nombre </h5>
+<pre> {{ miFormulario.controls.nombre.errors | json }} </pre>
+
+<h5> Email </h5>
+<pre> {{ miFormulario.controls.email.errors | json }} </pre>
+
+<h5> Username </h5>
+<pre> {{ miFormulario.controls.username.errors | json }} </pre>
