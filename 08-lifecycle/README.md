@@ -1,3 +1,9 @@
 # Lifecycle
-
-## Templates
+* ngOnChanges
+* ngDoCheck
+* ngAfterContentInit
+* ngAfterContentChecked
+* ngAfterViewInit
+* ngAfterViewChecked
+* ngOnDestroy
+* ngOnInit
