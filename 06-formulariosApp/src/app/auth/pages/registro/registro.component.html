@@ -38,6 +38,12 @@
           >
 
           <span class="form-text text-danger"
+            *ngIf="compoNoValido('email')"
+          >
+            {{ emailErrorMsg  }}
+          </span>
+
+          <!-- <span class="form-text text-danger"
             *ngIf="emailrequired()"
           >
             El correo es obligatorio
@@ -53,7 +59,7 @@
             *ngIf="emailTomado()"
           >
             El correo ingresado ya fue tomado
-          </span>
+          </span> -->
 
         </div>
       </div>
