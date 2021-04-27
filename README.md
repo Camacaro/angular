@@ -87,3 +87,6 @@ Este es un tema fundamental, pero no es el único, hay varias formas de manejar 
 
 ### 07-selectores
 Esta sección es una extensión de los formularios reactivos, la cual cubre un tema, el manejo de selectores anidados usando RXJS.
+
+### 08-lifecycle
+Implementar los ciclo de vida de angular
