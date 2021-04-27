@@ -38,9 +38,21 @@
           >
 
           <span class="form-text text-danger"
-            *ngIf="compoNoValido('email')"
+            *ngIf="emailrequired()"
           >
             El correo es obligatorio
+          </span>
+
+           <span class="form-text text-danger"
+            *ngIf="emailfortmat()"
+          >
+            El valor ingresado no tiene formato de correo
+          </span>
+
+          <span class="form-text text-danger"
+            *ngIf="emailTomado()"
+          >
+            El correo ingresado ya fue tomado
           </span>
 
         </div>
@@ -108,6 +120,7 @@
           <button
             class="btn btn-primary float-end"
             type="submit"
+            [disabled]="miFormulario.pending"
           >
             Crear
           </button>
@@ -121,6 +134,12 @@
 
 
 <h5>Form Valid {{ miFormulario.valid }} </h5>
+<br>
+
+<h5>Form Status {{ miFormulario.status }} </h5>
+<br>
+
+<h5>Form Pending {{ miFormulario.pending }} </h5>
 <br>
 
 <h5>Form Errors </h5>

@@ -40,13 +40,30 @@ export class RegistroComponent implements OnInit {
     this.miFormulario.reset({
       nombre: 'Jesus Camacaro',
       email: 'test1@test.com',
-      username: 'jcamacaro'
+      username: 'jcamacaro',
+      password: '123456',
+      password2: '123456'
     });
   }
 
   compoNoValido( campo: string ): boolean | undefined {
     return this.miFormulario.get(campo)?.invalid
       && this.miFormulario.get(campo)?.touched;
+  }
+
+  emailrequired(): boolean | undefined {
+    return this.miFormulario.get('email')?.errors?.required
+      && this.miFormulario.get('email')?.touched;
+  }
+
+  emailfortmat(): boolean | undefined {
+    return this.miFormulario.get('email')?.errors?.pattern
+      && this.miFormulario.get('email')?.touched;
+  }
+
+  emailTomado(): boolean | undefined {
+    return this.miFormulario.get('email')?.errors?.emailTomado
+      && this.miFormulario.get('email')?.touched;
   }
 
   submitFormulario(): void {
