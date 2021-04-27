@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { nombreApellidoPattern, emailPattern, noPuedeSerStrider } from '../../../shared/validators/validaciones';
+import { ValidatorService } from '../../../shared/validators/validator.service';
 
 @Component({
   selector: 'app-registro',
@@ -10,13 +11,24 @@ import { nombreApellidoPattern, emailPattern, noPuedeSerStrider } from '../../..
 })
 export class RegistroComponent implements OnInit {
 
+  // Validaciones como un simple archivo
+  // miFormulario: FormGroup = this.fb.group({
+  //   nombre: ['', [ Validators.required, Validators.pattern( nombreApellidoPattern ) ] ],
+  //   email: ['', [ Validators.required, Validators.pattern( emailPattern ) ] ],
+  //   username: ['', [ Validators.required, noPuedeSerStrider ] ],
+  // });
+
+  // validaciones como una clase
   miFormulario: FormGroup = this.fb.group({
-    nombre: ['', [ Validators.required, Validators.pattern( nombreApellidoPattern ) ] ],
-    email: ['', [ Validators.required, Validators.pattern( emailPattern ) ] ],
-    username: ['', [ Validators.required, noPuedeSerStrider ] ],
+    nombre: ['', [ Validators.required, Validators.pattern( this.validatorService.nombreApellidoPattern ) ] ],
+    email: ['', [ Validators.required, Validators.pattern( this.validatorService.emailPattern ) ] ],
+    username: ['', [ Validators.required, this.validatorService.noPuedeSerStrider ] ],
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private validatorService: ValidatorService
+  ) { }
 
   ngOnInit(): void {
     this.miFormulario.reset({
