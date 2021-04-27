@@ -45,8 +45,8 @@
         <option value=""> -- Seleccione el País fronterizo -- </option>
         <option 
           *ngFor="let frontera of fronteras"
-          [value]="frontera"> 
-          {{ frontera }} 
+          [value]="frontera.alpha3Code"> 
+          {{ frontera.name }} 
         </option>
       </select>
     </div>
