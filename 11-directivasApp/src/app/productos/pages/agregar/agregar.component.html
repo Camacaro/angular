@@ -1,5 +1,5 @@
 
-<h1 class="mt-5">Agregar Product</h1>
+<h1 class="mt-5">Agregar Product </h1>
 <hr>
 
 <form [formGroup]="miFormulario"
@@ -21,9 +21,10 @@
 
     <div class="col-auto">
       <span 
+        [valido]="!tieneError('nombre')"
         appErrMsg
-        *ngIf="tieneError('nombre')"
-        class="form-text">Este campo es requerido</span>
+        [mensaje]="text1"
+        [color]="color"></span>
     </div>
 
   </div>
@@ -33,13 +34,41 @@
       <button
         class="btn btn-primary"
         type="submit"
+        (click)="cambiarNombre()"
       >
-        Guardar
+        cambiar Nombre
+      </button>
+
+      &nbsp;
+
+      <button
+        class="btn btn-primary "
+        type="submit"
+        (click)="cambiarColor()"
+      >
+        cambiar Color
       </button>
     </div>
   </div>
 </form>
 
+
 <h3 class="mt-5"> Formulario </h3>
 <pre>Valid: {{ miFormulario.valid  }} </pre>
 <pre>Value: {{ miFormulario.value | json  }} </pre>
+
+<br>
+<h3>Ejemplos de la directiva</h3>
+<small appErrMsg></small> <br>
+<small appErrMsg color="blue"></small> <br>
+<small appErrMsg [color]="colorPersonalizado"></small> <br>
+<small appErrMsg color="blue" mensaje="Mi mensaje"></small> <br>
+
+<!-- Con el * mando la referencia de todo el HTML -->
+<div class="row mt-5" *appCustomIf="miFormulario.valid">
+  <div class="col">
+    <div class="alert alert-info">
+      Todo Ok
+    </div>
+  </div>
+</div>
