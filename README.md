@@ -125,3 +125,18 @@ librería de terceros en Angular, para que comprendamos como mostrar de forma vi
 * Y más
 
 El objetivo de esta sección es crear una directiva que nos ayude a pulir la parte de mensajes de validación de los formularios reactivos, es un ejemplo real y aplicado de una directiva personalizada funcionando.
+
+### 11-MEAN
+
+#### Backend
+* Fundamentos de Node
+* REST Services
+* JWT
+* MongoDB - Mongo Atlas
+* Express framework
+* Express validator
+* CRUD
+* Validaciones
+* Modelos de base de datos
+* Encriptar contraseñas
+* Y más...
