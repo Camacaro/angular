@@ -91,7 +91,7 @@ Esta sección es una extensión de los formularios reactivos, la cual cubre un t
 ### 08-lifecycle
 Implementar los ciclo de vida de angular
 
-### 09-
+### 09-mapasApp
 * Manejo de librerías escritas en JavaScript en TypeScript
 * Uso de Mapas basados en Mapbox (el API es similar a la de Google Maps)
 * Marcadores
@@ -106,3 +106,13 @@ Implementar los ciclo de vida de angular
 * Y más
 
 Aunque el uso de mapas no es algo directamente relacionado con Angular, ya que todo se realiza mediante un objeto de una librería de terceros, en este caso Mapbox, es interesante comprender cómo funcionan esas librerías dentro de Angular y cómo poder tener control de los objetos como si fueran propiedades de nuestras clases.
+
+### 10-graficasApp
+* Gráficas dinámicas
+* Gráficas de Barra y Dona
+* Re-dibujar valores de gráfica
+* Gráficas basadas en peticiones HTTP
+* Componentes especializados para la re-utilización de gráficas
+* Y más...
+
+librería de terceros en Angular, para que comprendamos como mostrar de forma visual la data de nuestros componentes.
