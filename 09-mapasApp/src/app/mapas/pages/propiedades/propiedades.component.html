@@ -16,7 +16,11 @@
         class="col-4 mb-2">
 
         <div class="card">
-          <img src="..." alt="img" class="card-img-top">
+          <app-mini-mapa 
+            class="card-img-top" 
+            [lngLat]="propiedad.lngLat">
+          </app-mini-mapa>
+          
           <div class="card-body">
             <h5 class="card-title"> {{ propiedad.titulo }} </h5>
             <div class="card-text"> {{ propiedad.descripcion }} </div>
