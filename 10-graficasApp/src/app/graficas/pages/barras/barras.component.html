@@ -1,1 +1,29 @@
-<p>barras works!</p>
+
+<h1>Gráficas de Barras</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <div style="display: block">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [chartType]="barChartType"
+      >
+      </canvas>
+    </div>
+
+    <button 
+      class="btn btn-primary float-end"
+      (click)="randomize()">
+      Actualizar
+    </button>
+
+
+  </div>
+</div>
+

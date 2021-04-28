@@ -7,3 +7,5 @@
 * Y más...
 
 librería de terceros en Angular, para que comprendamos como mostrar de forma visual la data de nuestros componentes.
+
+"allowedCommonJsDependencies": ["chart.js"],
