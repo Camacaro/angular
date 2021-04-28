@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ErrMsgDirective } from './directives/err-msg.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ErrMsgDirective
+  ],
+  exports: [
+    ErrMsgDirective
+  ],
   imports: [
     CommonModule
   ]
