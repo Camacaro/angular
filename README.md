@@ -116,3 +116,12 @@ Aunque el uso de mapas no es algo directamente relacionado con Angular, ya que t
 * Y más...
 
 librería de terceros en Angular, para que comprendamos como mostrar de forma visual la data de nuestros componentes.
+
+### 11-directivasApp
+* Directivas personalizadas
+* Directivas estructurales personalizadas
+* Manipulación del elemento del DOM que es host de la directiva
+* Cambio del HTML y estilos del objeto DOM host.
+* Y más
+
+El objetivo de esta sección es crear una directiva que nos ayude a pulir la parte de mensajes de validación de los formularios reactivos, es un ejemplo real y aplicado de una directiva personalizada funcionando.
