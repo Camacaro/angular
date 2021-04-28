@@ -12,7 +12,7 @@ export class DonaComponent  {
 
   public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales', 'Others'];
   public doughnutChartData: MultiDataSet = [
-    [350, 450, 100, 250]
+    [350, 450, 100, 150]
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
@@ -26,6 +26,6 @@ export class DonaComponent  {
         '#4DF864'
       ]
     }
-  ]
+  ];
 
 }
