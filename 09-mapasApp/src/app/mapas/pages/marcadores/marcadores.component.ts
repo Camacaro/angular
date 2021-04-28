@@ -2,8 +2,9 @@ import { Component,  ViewChild, ElementRef, AfterViewInit } from '@angular/core'
 import * as mapboxgl from 'mapbox-gl';
 
 interface MarcadorColor {
-  color: string;
-  marker: mapboxgl.Marker;
+  color?: string;
+  marker?: mapboxgl.Marker;
+  centro?: [number, number];
 }
 @Component({
   selector: 'app-marcadores',
@@ -64,6 +65,8 @@ export class MarcadoresComponent implements AfterViewInit {
     // new mapboxgl.Marker()
     //   .setLngLat( this.center )
     //   .addTo( this.mapa );
+
+    this.leerLocalStorage();
   }
 
   agregarMarcador(): void {
@@ -79,6 +82,8 @@ export class MarcadoresComponent implements AfterViewInit {
       .addTo( this.mapa );
 
     this.marcadores.push({ color, marker: nuevoMarcador });
+
+    this.guardarMarcadoresLocalStorage();
   }
 
   irMarcador(marcador: mapboxgl.Marker): void {
@@ -87,12 +92,49 @@ export class MarcadoresComponent implements AfterViewInit {
     });
   }
 
-  guardarMarcadoresLocalStorage() {
+  guardarMarcadoresLocalStorage(): void {
+
+    const lngLatArr: MarcadorColor[] = [];
+
+    this.marcadores.forEach( m => {
+      const color = m.color;
+      const { lng, lat } = m.marker!.getLngLat();
+
+      lngLatArr.push({
+        color,
+        centro: [ lng, lat ]
+      });
+
+      localStorage.setItem('marcadores', JSON.stringify( lngLatArr ) );
+    });
 
   }
 
-  leerLocalStorage() {
-    
+  leerLocalStorage(): void {
+
+    const marcadores = localStorage.getItem('marcadores');
+
+    if ( !marcadores ) {
+      return;
+    }
+
+    const lngLatArr: MarcadorColor[] = JSON.parse( marcadores );
+
+    lngLatArr.forEach( m => {
+      const marcador = new mapboxgl.Marker({
+          draggable: true,
+          color: m.color
+        })
+          .setLngLat( m.centro! )
+          .addTo( this.mapa );
+
+      this.marcadores.push({
+        marker: marcador,
+        color: m.color
+      });
+    });
+
+
   }
 
 }
