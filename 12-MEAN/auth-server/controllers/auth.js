@@ -69,7 +69,7 @@ const loginUsuario = async (req, res = response) => {
 
     const token = await generarJWT(usuario.id, usuario.name);
 
-   return res.status(200).json({
+    return res.status(200).json({
       ok: true,
       uid: usuario.id,
       name: usuario.name,
@@ -85,12 +85,28 @@ const loginUsuario = async (req, res = response) => {
   }
 }
 
-const revalidarToken = (req, res) => {
+const revalidarToken = async (req, res) => {
 
-  return res.json({
-    ok: true,
-    msg: 'Renew /renew'
-  })
+  const { uid, name } = req;
+
+  try {
+    const token = await generarJWT(uid, name);
+
+    return res.json({
+      ok: true,
+      uid,
+      name,
+      token
+    });
+
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      ok: false,
+      msg: 'Por favor hable con el administrador'
+    })
+  }
+  
 
 }
 
