@@ -22,15 +22,15 @@ const routes: Routes = [
 /**
  * El useHash: true
  * Se usa cuando por ejemplo estoy en apache y no puedo
- * tocar el .htaccess para configurar que el index manejara 
+ * tocar el .htaccess para configurar que el index manejara
  * las rutas, entonces aplico el useHash: true
- * 
- * Esto solucion es para navegadores viejos o cuando no tenemos 
+ *
+ * Esto solucion es para navegadores viejos o cuando no tenemos
  * acceso a las rutas del apache en el .htaccess
- * 
- * 
+ *
+ *
  * Lo deje en false porque no quiero el # en la URL y el cambio
- * lo hare en el backend de node 
+ * lo hare en el backend de node
  */
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
