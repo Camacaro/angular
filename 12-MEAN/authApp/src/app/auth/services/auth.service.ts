@@ -21,6 +21,28 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  registro( name: string, email: string, password: string,  ): Observable<boolean|string> {
+    const url = `${ this.baseUrl }/auth/new`;
+
+    const body = {name, email, password};
+
+    return this.http.post<AuthResponse>( url, body )
+      .pipe(
+        tap( (resp) => {
+          if ( resp.ok ) {
+            localStorage.setItem('token', resp.token!);
+            this._usuario = {
+              name: resp.name!,
+              email: resp.email!,
+              uid: resp.uid!
+            };
+          }
+        }),
+        map( (resp) => resp.ok ),
+        catchError( e => of(e.error.msg) )
+      );
+  }
+
   login(email: string, password: string): Observable<boolean|string> {
     const url = `${ this.baseUrl }/auth`;
 
@@ -33,6 +55,7 @@ export class AuthService {
             localStorage.setItem('token', resp.token!);
             this._usuario = {
               name: resp.name!,
+              email: resp.email!,
               uid: resp.uid!
             };
           }
@@ -54,6 +77,7 @@ export class AuthService {
           localStorage.setItem('token', resp.token!);
           this._usuario = {
             name: resp.name!,
+            email: resp.email!,
             uid: resp.uid!
           };
           return resp.ok;
